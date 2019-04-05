@@ -1,0 +1,55 @@
+server:
+  port: 8282
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+
+sso:
+  host: http://localhost:8080
+  base-url: ${sso.host}/auth
+  realm: my-apps
+  realm-url: ${sso.base-url}/realms/${sso.realm}
+  token-uri: ${sso.realm-url}/protocol/openid-connect/token
+
+
+security:
+  oauth2:
+    resource:
+      id: favourites-api
+      token-info-uri: ${sso.realm-url}/protocol/openid-connect/token/introspect
+      user-info-uri: ${sso.realm-url}/protocol/openid-connect/userinfo
+      jwk:
+        key-set-uri: ${sso.realm-url}/protocol/openid-connect/certs
+#      jwt:
+#        key-value: |
+#          -----BEGIN PUBLIC KEY-----
+#          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAg4/JgkPnFRc0CYbM1U5WQoF7dyTxTsDTlILD4CKPpPIHkEM55UBFZioLP8axQNdHd9cO0TF2cgP6hXM4y0Ksve8QkInZZza6UKyH1WD+3bl1k0ocJ4g/NyDnICwrjevOKn/V2RcIO0mQevgDYW8EZiTiqutbQknaClZyB5t1rCZPmdOQPwI8voUfsgXNizJUx3dzECXMWU88SfMuDS0tch1NhYeN3EdIuoNCSeuIBUoRRX4zQEYRd+zYN7mJbPvUjjg5SgaxEsu8ZoGefLiK6k9kg2yVkerqsSo84Yq8N2GlomBSrFY6of/KGRSDBZMjFlb6iXAOPUBvA9wXX5FGlwIDAQAB
+#          -----END PUBLIC KEY-----
+
+#    client:
+#      client-id: merchant-service
+#      client-secret: 489c2011-1884-4473-9ee1-23836e25625e
+#      access-token-uri: ${sso.token-uri}
+#      grant-type: client_credentials
+---
+spring:
+  profiles: docker
+
+sso:
+  host: http://auth.my-company.com:8080
+  base-url: ${sso.host}/auth
+  realm: my-apps
+  realm-url: ${sso.base-url}/realms/${sso.realm}
+  token-uri: ${sso.realm-url}/protocol/openid-connect/token
+
+security:
+  oauth2:
+    resource:
+      id: favourites-api
+      token-info-uri: ${sso.realm-url}/protocol/openid-connect/token/introspect
+      user-info-uri: ${sso.realm-url}/protocol/openid-connect/userinfo
+      jwk:
+        key-set-uri: ${sso.realm-url}/protocol/openid-connect/certs

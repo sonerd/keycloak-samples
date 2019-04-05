@@ -1,0 +1,16 @@
+FROM sonerd/keycloak-auth:latest
+
+ADD test-realm.json /opt/jboss/keycloak/
+
+ENV KEYCLOAK_HOME /opt/jboss/keycloak
+ENV DB_VENDOR=H2
+
+COPY test-standalone.xml $KEYCLOAK_HOME/standalone/configuration/standalone.xml
+
+CMD [ \
+    "-b", "0.0.0.0", "-c", "standalone.xml", \
+    "   -Dkeycloak.migration.action=import \
+        -Dkeycloak.migration.provider=singleFile \
+        -Dkeycloak.migration.file=/opt/jboss/keycloak/test-realm.json \
+        -Dkeycloak.migration.strategy=OVERWRITE_EXISTING" \
+]
