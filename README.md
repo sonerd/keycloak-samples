@@ -30,6 +30,13 @@ After successful login you will be redirected back to the requested resource.
 The security setup of the project is done by using the keycloak adapters for `spring-boot` and `spring-security`.
 
 ### How to run
+The samples are running behind nginx reverse proxy as you can see in the `docker-compose.yaml`.
+To access the apps by the configured URLs add this lines to your `hosts` file:
+```
+127.0.0.1       favourites-api.company.com
+127.0.0.1       favourites-app.company.com
+127.0.0.1       auth.company.com
+```
 To run the samples just execute the `run.sh` which will start keycloak with the needed realm settings, the `favourites-app` and the `favourites-api`. All applications are behind a `nginx` reverse proxy.
 - To open keycloak admin console go to `http://auth.company.com/auth/admin/master/console/#/realms/my-apps` in your browser.
 - To open the favourites-app go to `http://favourites-app.company.com` in your browser. When you click the `My favourites` you will be redirected to keycloak for login.
