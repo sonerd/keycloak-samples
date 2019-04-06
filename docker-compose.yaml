@@ -16,12 +16,12 @@ services:
       context: ./favourites-api
       dockerfile: Dockerfile
     environment:
-      - VIRTUAL_HOST=favourites-api.my-company.com
+      - VIRTUAL_HOST=favourites-api.company.com
       - VIRTUAL_PORT=8282
     ports:
       - 8282
     depends_on:
-      - auth.my-company.com
+      - auth.company.com
 
   favourites-app:
       image: sonerd/favourites-app
@@ -30,20 +30,20 @@ services:
         context: ./favourites-app
         dockerfile: Dockerfile
       environment:
-        - VIRTUAL_HOST=favourites-app.my-company.com
+        - VIRTUAL_HOST=favourites-app.company.com
         - VIRTUAL_PORT=8383
       ports:
         - 8383
         - "8000:8000"
       depends_on:
-        - auth.my-company.com
+        - auth.company.com
 
-  auth.my-company.com:
+  auth.company.com:
     build:
       context: .
       dockerfile: Dockerfile
     image: sonerd/keycloak-auth
-    hostname: auth.my-company.com
+    hostname: auth.company.com
     ports:
       - "8080:8080"
     environment:
@@ -51,5 +51,5 @@ services:
       - KEYCLOAK_PASSWORD=admin
       - KEYCLOAK_IMPORT=/tmp/sample-realm.json
       - PROXY_ADDRESS_FORWARDING=true
-      - VIRTUAL_HOST=auth.my-company.com
+      - VIRTUAL_HOST=auth.company.com
       - VIRTUAL_PORT=8080

@@ -39,7 +39,7 @@ spring:
   profiles: docker
 
 sso:
-  host: http://auth.my-company.com:8080
+  host: http://auth.company.com:8080
   base-url: ${sso.host}/auth
   realm: my-apps
   realm-url: ${sso.base-url}/realms/${sso.realm}

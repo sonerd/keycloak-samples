@@ -609,17 +609,17 @@
     {
       "id": "646a3796-9150-40ee-b09d-b60f719b02d3",
       "clientId": "favourites-api",
-      "rootUrl": "http://favourites-api.my-company.com/",
-      "adminUrl": "http://favourites-api.my-company.com/",
+      "rootUrl": "http://favourites-api.company.com/",
+      "adminUrl": "http://favourites-api.company.com/",
       "surrogateAuthRequired": false,
       "enabled": true,
       "clientAuthenticatorType": "client-secret",
       "secret": "489c2011-1884-4473-9ee1-23836e25625e",
       "redirectUris": [
-        "http://favourites-api.my-company.com/*"
+        "http://favourites-api.company.com/*"
       ],
       "webOrigins": [
-        "http://favourites-api.my-company.com"
+        "http://favourites-api.company.com"
       ],
       "notBefore": 0,
       "bearerOnly": false,
@@ -727,17 +727,17 @@
     {
       "id": "8b0994c6-ee31-4c6a-97ef-68197f4fdd5c",
       "clientId": "favourites-app",
-      "rootUrl": "http://favourites-app.my-company.com/",
-      "adminUrl": "http://favourites-app.my-company.com/",
+      "rootUrl": "http://favourites-app.company.com/",
+      "adminUrl": "http://favourites-app.company.com/",
       "surrogateAuthRequired": false,
       "enabled": true,
       "clientAuthenticatorType": "client-secret",
       "secret": "**********",
       "redirectUris": [
-        "http://favourites-app.my-company.com/*"
+        "http://favourites-app.company.com/*"
       ],
       "webOrigins": [
-        "http://favourites-app.my-company.com"
+        "http://favourites-app.company.com"
       ],
       "notBefore": 0,
       "bearerOnly": false,
