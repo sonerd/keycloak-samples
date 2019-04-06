@@ -28,6 +28,6 @@ The security setup of the project is done by using the keycloak adapters for `sp
 ### How to run
 To run the samples just execute the `run.sh` which will start keycloak with the needed realm settings, the `favourites-app` and the `favourites-api`. All applications are behind a `nginx` reverse proxy.
 - To open keycloak admin console go to `http://auth.my-company.com/auth/admin/master/console/#/realms/my-apps` in your browser.
-- To open the favourites-app go to `http://favourites-app.my-company.com` in your browser. When you click the `My restaurants` you will be redirected to keycloak for login.
+- To open the favourites-app go to `http://favourites-app.my-company.com` in your browser. When you click the `My favourites` you will be redirected to keycloak for login.
 - The user `peter/password` is allowed to access the requested page
 - The user `tom/password` is not allowed to access the requested page which result in a redirection to a custom access denied page  
