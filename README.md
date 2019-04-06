@@ -1,6 +1,6 @@
 # Samples
 
-## Sample Favourites API
+## Favourites API
 The sample favourite API (resource server in context of OAuth) shows how a backend application can be secured with _Bearer Tokens_ issued by keycloak (authorisation server in context of OAuth).
 The sample has an `/favourites/{username}` endpoint which returns the favourites for the specified user.
 To call this endpoint an access token which includes a specific role is required. 
