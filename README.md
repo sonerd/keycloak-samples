@@ -1,4 +1,8 @@
 # Samples
+## Prerequisites
+- java 1.8
+- docker
+
 
 ## Favourites API
 The sample favourite API (resource server in context of OAuth) shows how a backend application can be secured with _Bearer Tokens_ issued by keycloak (authorisation server in context of OAuth).
