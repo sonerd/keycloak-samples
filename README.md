@@ -2,7 +2,7 @@
 ## Prerequisites
 - java 1.8
 - docker
-
+- maven
 
 ## Favourites API
 The sample favourite API (resource server in context of OAuth) shows how a backend application can be secured with _Bearer Tokens_ issued by keycloak (authorisation server in context of OAuth).
@@ -12,7 +12,7 @@ The access token can be retrieved by calling the token endpoint provided by keyc
 
 POST the `client_id`, `grant_type`, `client_secret`, `username` and `password` as form parameters to following endpoint:
 
-`{{AUTH_URL}}/auth/realms/my-apps/protocol/openid-connect/token`
+`http://auth.company.com/auth/realms/my-apps/protocol/openid-connect/token`
 
 The response will include an `access_token` which can be copied and passed as `Authorization Bearer <access_token>` 
 header parameter to call `/favourites/{username}`.
