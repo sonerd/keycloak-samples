@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class FavouritesResource {
 
     @GetMapping(path = "/favourites")
-    public String getMerchants(Model model) {
-        model.addAttribute("merchants", Arrays.asList("VW Passat", "Audi A4", "BMW 520i"));
-        return "merchants";
+    public String getFavourites(Model model) {
+        model.addAttribute("favourites", Arrays.asList("VW Passat", "Audi A4", "BMW 520i"));
+        return "favourites";
     }
 
     @GetMapping(path = "/logout")

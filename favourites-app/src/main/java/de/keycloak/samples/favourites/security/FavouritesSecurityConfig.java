@@ -52,7 +52,7 @@ public class FavouritesSecurityConfig extends KeycloakWebSecurityConfigurerAdapt
                 .sessionAuthenticationStrategy(sessionAuthenticationStrategy())
             .and()
                 .authorizeRequests()
-                .antMatchers("/merchants").hasRole("OWNER")
+                .antMatchers("/favourites").hasRole("OWNER")
                 .anyRequest().permitAll()
             .and()
                 .exceptionHandling().accessDeniedHandler(accessDeniedHandler());
